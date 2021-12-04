@@ -15,6 +15,8 @@ choco install spotify  -y
 choco install winscp  -y
 choco install oh-my-posh -y
 choco install everything -y 
+choco install microsoft-windows-terminal
+
 
 ## customized templates
 Write-host "oh-my-posh Template installing" -ForegroundColor Green
