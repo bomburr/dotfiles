@@ -29,12 +29,6 @@ $envs = @("%USERPROFILE%\AppData\Local\Programs\oh-my-posh\bin",
 
 $envs.GetEnumerator() | % {$Env:Path += ";$($_)"}
 
-
-## editing powershell profile
-get-item "c:$user\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value 'Import-Module oh-my-posh
-Set-PoshPrompt -Theme night-owl'
-
-
 ## git clones 
 
 if(new-item -Name "works" -Path "C:\" -ItemType Directory){
