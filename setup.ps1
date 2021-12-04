@@ -17,6 +17,13 @@ choco install oh-my-posh -y
 choco install everything -y 
 choco install microsoft-windows-terminal
 
+## Installing Meslo font 
+Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip" -OutFile C:\Temp\Meslo.zip
+Expand-Archive C:\Temp\Meslo.zip -DestinationPath "C:\Windows\Fonts\"
+Expand-Archive C:\Temp\Meslo.zip -DestinationPath "C:\temp\meslo"
+$font_files = Get-ChildItem C:\Temp\meslo\
+$font_files.GetEnumerator() | % {if((Get-ItemProperty -Name $_.Name -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts") -eq $null) { New-ItemProperty -Name $_.Name -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $_.Name -Force}}
+Write-host "You need to change font setting in terminal to Meslo LGM NF" -ForegroundColor Yellow
 
 ## customized templates
 Write-host "oh-my-posh Template installing" -ForegroundColor Green
