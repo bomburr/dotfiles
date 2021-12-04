@@ -1,1 +1,4 @@
-- night-owl template edited
+##### Changes
+- Added time to  Robbyrussel theme
+- Terminal Icons loaded
+
