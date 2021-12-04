@@ -20,12 +20,14 @@ choco install microsoft-windows-terminal
 
 ## customized templates
 Write-host "oh-my-posh Template installing" -ForegroundColor Green
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/robbyrussel.omp.json" -OutFile "c:$userpath\Documents\WindowsPowerShell\Modules\oh-my-posh\6.17.0\themes\robbyrussel.omp.json"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/robbyrussel.omp.json" -OutFile "c:$userpath\AppData\Local\Programs\oh-my-posh\themes\robbyrussel.omp.json"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/robbyrussel.omp.json" -OutFile "C:\Program Files\WindowsPowerShell\Modules\oh-my-posh\themes\robbyrussel.omp.json"
 Write-host "editing settings.json for vscode" -ForegroundColor Green
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/settings.json" -OutFile "c:$userpath\AppData\Roaming\Code\User\settings.json"
 
 ## editing powershell profile 
-get-item "c:$userpath\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value 'Import-Module oh-my-posh
+get-item "c:$userpath\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value '
+Import-Module oh-my-posh
 Set-PoshPrompt -Theme robbyrussel
 Import-Module -Name Terminal-Icons'
 
