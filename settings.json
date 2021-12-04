@@ -1,0 +1,40 @@
+{
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH}"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": -1,
+    "explorer.confirmDragAndDrop": false,
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "wt": {
+            "path": "%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe"
+        },
+    
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "MesloLGL NF",
+}
