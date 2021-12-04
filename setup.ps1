@@ -14,7 +14,7 @@ choco install winscp  -y
 choco install oh-my-posh -y
 choco install everything -y 
 Write-host "oh-my-posh Template installing" -ForegroundColor Green
-Invoke-WebRequest -Uri"https://raw.githubusercontent.com/bomburr/dotfiles/main/night-owl.omp.json" -OutFile "c:$user\Documents\WindowsPowerShell\Modules\oh-my-posh\6.17.0\themes\night-owl.omp.json"
+Invoke-WebRequest -Uri"https://raw.githubusercontent.com/bomburr/dotfiles/main/robbyrussel.omp.json" -OutFile "c:$user\Documents\WindowsPowerShell\Modules\oh-my-posh\6.17.0\themes\robbyrussel.omp.json"
 Write-host "editing settings.json for vscode" -ForegroundColor Green
 Invoke-WebRequest -Uri"https://raw.githubusercontent.com/bomburr/dotfiles/main/settings.json" -OutFile "c:$user\AppData\Roaming\Code\User\settings.json"
 
