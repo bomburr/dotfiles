@@ -2,6 +2,7 @@ $userpath = $env:HOMEPATH
 Write-Host  "Choco is installing..." -ForegroundColor Green
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
+Install-Module -Name Terminal-Icons -Repository PSGallery
 
 choco install vmware-workstation-player
 choco install git  -y
@@ -19,7 +20,8 @@ Invoke-WebRequest -Uri"https://raw.githubusercontent.com/bomburr/dotfiles/main/s
 
 ## editing powershell profile 
 get-item "c:$user\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value 'Import-Module oh-my-posh
-Set-PoshPrompt -Theme night-owl'
+Set-PoshPrompt -Theme robbyrussel
+Import-Module -Name Terminal-Icons'
 
 ## env variables
 $envs = @("%USERPROFILE%\AppData\Local\Programs\oh-my-posh\bin",
