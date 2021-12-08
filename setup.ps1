@@ -5,6 +5,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ## Module installations
 Install-Module -Name Terminal-Icons -Repository PSGallery
+Install-Module -Name PSReadLine -Repository PSGallery
+
+Import-Module PSReadLine
+
 ## software installations
 choco install vmware-workstation-player
 choco install git  -y
@@ -24,10 +28,26 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/
 Write-host "editing settings.json for vscode" -ForegroundColor Green
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bomburr/dotfiles/main/settings.json" -OutFile "c:$userpath\AppData\Roaming\Code\User\settings.json"
 
-## editing powershell profile 
-get-item "c:$userpath\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value 'Import-Module oh-my-posh
+
+Import-Module oh-my-posh
 Set-PoshPrompt -Theme robbyrussel
-Import-Module -Name Terminal-Icons'
+## editing powershell profile 
+get-item "c:$userpath\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" | Add-Content -Value '
+Import-Module oh-my-posh
+Set-PoshPrompt -Theme robbyrussel
+Import-Module -Name Terminal-Icons
+Import-Module PSReadLine'
+
+
+# Keybindings
+#https://github.com/PowerShell/PSReadLine
+
+Set-PSReadLineKeyHandler -Key Ctrl+RightArrow -Function ForwardWord 
+Set-PSReadLineKeyHandler -Key Ctrl+LeftArrow -Function BackwardWord 
+Set-PSReadLineKeyHandler -Key Ctrl+Spacebar -Function MenuComplete
+Set-PSReadLineKeyHandler -Key Ctrl+Backspace -Function BackwardKillWord
+
+
 
 ## env variables
 $envs = @("%USERPROFILE%\AppData\Local\Programs\oh-my-posh\bin")
